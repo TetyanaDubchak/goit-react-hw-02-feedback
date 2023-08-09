@@ -18,14 +18,14 @@
 import { Component } from "react";
 import { Section } from "./Section/Section";
 
-const styles = {
-  height: '100vh',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  fontSize: 40,
-  color: '#010101'
-}
+// const styles = {
+//   height: '100vh',
+//   display: 'flex',
+//   justifyContent: 'center',
+//   alignItems: 'center',
+//   fontSize: 40,
+//   color: '#010101'
+// }
 
 
 export class App extends Component {
