@@ -17,16 +17,10 @@
 
 import { Component } from "react";
 import { Section } from "./Section/Section";
+import { GlobalStyled } from "./GlobalStyle";
+import 'modern-normalize'
 
-// const styles = {
-//   height: '100vh',
-//   display: 'flex',
-//   justifyContent: 'center',
-//   alignItems: 'center',
-//   fontSize: 40,
-//   color: '#010101'
-// }
-
+import { Wrapper } from "./App.styled";
 
 export class App extends Component {
   state = {
@@ -37,11 +31,17 @@ export class App extends Component {
 
   
 
-  changeStatistics = (type) => {
-    return   this.state.type
+  countTotalFeedback = () => {
+    let sum = this.state.good + this.state.neutral + this.state.bad
+    return sum
       
   }
 
+  countPositiveFeedbackPercentage = () => {
+    let part = ((this.state.good) * 100) / (this.state.good + this.state.neutral + this.state.bad)
+    console.log(part);
+    return Math.round(part)
+  }
 
   handleClick = type => {
     console.log(this.state);
@@ -55,8 +55,11 @@ export class App extends Component {
 
   render() {
     return (
-      <Section clicksGood = {this.state.good} clicksNeutral = {this.state.neutral} clicksBad = {this.state.bad} onButtons = {this.handleClick} title={'Please leave feedback'} />
-
+      <Wrapper>
+      <Section part={this.countPositiveFeedbackPercentage()} sum={this.countTotalFeedback()} clicksGood = {this.state.good} clicksNeutral = {this.state.neutral} clicksBad = {this.state.bad} onButtons = {this.handleClick} title={'Please leave feedback'} />
+      <GlobalStyled/>
+      </Wrapper>
+      
     )
 
   }

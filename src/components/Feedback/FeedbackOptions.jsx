@@ -1,12 +1,12 @@
-
+import { List, Button } from "./FeedbackOptions.styled";
 
 export const FeedbackOptions = ({onButtons}) => {
     return (
-        <ul>
-            <li><button onClick={() => onButtons('good')} id="good">Good</button></li>
-            <li><button onClick={() => onButtons('neutral')} id="neutral">Neutral</button></li>
-            <li><button onClick={() => onButtons('bad')} id="bad">Bad</button></li>
-        </ul>  
+        <List>
+            <li><Button onClick={() => onButtons('good')} id="good">Good</Button></li>
+            <li><Button onClick={() => onButtons('neutral')} id="neutral">Neutral</Button></li>
+            <li><Button onClick={() => onButtons('bad')} id="bad">Bad</Button></li>
+        </List>  
 
     )
 }

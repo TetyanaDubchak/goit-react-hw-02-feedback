@@ -1,15 +1,15 @@
+import { Title, Text } from "./Statistics.styled";
 
-
-export const Statistics = ({clicksGood, clicksNeutral, clicksBad}) => {
+export const Statistics = ({clicksGood, clicksNeutral, clicksBad, sum, part}) => {
     return (
         <>
-            <h3>Statistics</h3>
+            <Title>Statistics</Title>
             <ul>
-                <li>Good: {clicksGood}</li>
-                <li>Neutral: {clicksNeutral}</li>
-                <li>Bad: {clicksBad }</li>
-                <li>Total</li>
-                <li>Positive feedback: </li>
+                <Text>Good: {clicksGood}</Text>
+                <Text>Neutral: {clicksNeutral}</Text>
+                <Text>Bad: {clicksBad }</Text>
+                <Text>Total: { sum}</Text>
+                <Text>Positive feedback: {part}%</Text>
             </ul>
         </>  
 
