@@ -1,4 +1,5 @@
 import { List, Button } from "./FeedbackOptions.styled";
+import PropTypes from 'prop-types';
 
 export const FeedbackOptions = ({onButtons}) => {
     return (
@@ -9,4 +10,8 @@ export const FeedbackOptions = ({onButtons}) => {
         </List>  
 
     )
+}
+
+FeedbackOptions.propTypes = {
+    onButtons: PropTypes.func,
 }
